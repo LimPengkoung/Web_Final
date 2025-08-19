@@ -1,0 +1,99 @@
+ body {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .register-container {
+      width: 100%;
+      max-width: 450px;
+      padding: 40px 30px;
+      background: rgba(30, 42, 56, 0.95);
+      border-radius: 16px;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(8px);
+      color: #fff;
+    }
+
+    .register-container h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+
+    .form-group {
+      position: relative;
+      margin-bottom: 30px;
+    }
+
+    .form-control {
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid #00b894;
+      border-radius: 0;
+      padding: 10px 5px;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .form-control::placeholder {
+      color: transparent;
+    }
+
+    .form-group label {
+      position: absolute;
+      top: 10px;
+      left: 5px;
+      font-size: 14px;
+      color: #ccc;
+      transition: 0.2s ease all;
+      pointer-events: none;
+    }
+
+    .form-control:focus + label,
+    .form-control:not(:placeholder-shown) + label {
+      top: -12px;
+      font-size: 12px;
+      color: #00cec9;
+    }
+
+    .form-control:focus {
+      border-color: #00cec9;
+      outline: none;
+    }
+
+    .btn-register {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #00b894, #00cec9);
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      color: #fff;
+      transition: 0.3s;
+      box-shadow: 0 4px 12px rgba(0, 206, 201, 0.3);
+    }
+
+    .btn-register:hover {
+      background: linear-gradient(135deg, #00cec9, #00b894);
+    }
+
+    .form-footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    .form-footer a {
+      color: #00cec9;
+      text-decoration: none;
+    }
+
+    .form-footer a:hover {
+      text-decoration: underline;
+    }

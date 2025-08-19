@@ -1,0 +1,26 @@
+.checkout-container {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2,
+h4 {
+  font-weight: 600;
+}
+
+.list-group-item {
+  border: none;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.list-group-item:last-child {
+  border-bottom: none;
+}
+
+.btn-lg {
+  border-radius: 8px;
+  font-size: 1.1rem;
+  padding: 12px;
+}

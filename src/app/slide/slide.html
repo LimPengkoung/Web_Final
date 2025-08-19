@@ -1,0 +1,33 @@
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li *ngFor="let image of images; let i = index"
+        [class.active]="i === currentIndex"
+        (click)="goToSlide(i)">
+    </li>
+  </ol>
+
+  <!-- Slides -->
+  <div class="carousel-inner">
+    <div class="carousel-item" *ngFor="let image of images; let i = index" [class.active]="i === currentIndex">
+      <img [src]="image.src"
+           class="d-block w-100 img-fluid"
+           [alt]="image.alt"
+           style="max-height: 500px; object-fit: cover; width: 100%;">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class="text-light">{{ image.title }}</h5>
+        <p class="text-light">{{ image.caption }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <button class="carousel-control-prev" type="button" (click)="prevSlide()">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" (click)="nextSlide()">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>

@@ -1,0 +1,28 @@
+.product-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.price {
+  font-size: 1.5rem;
+  color: #28a745;
+  font-weight: bold;
+}
+.category {
+  font-size: 1.6rem;
+  color: #888;
+  margin-left: 10px;
+}
+.product-image {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  background: #fff;
+}
+.btn-add-cart {
+  font-size: 1.1rem;
+  padding: 10px 20px;
+}
+.Instock {
+  font-weight: bold;
+  color: #28a745;
+}

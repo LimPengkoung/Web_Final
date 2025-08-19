@@ -1,0 +1,85 @@
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap.min.css"
+/>
+<div class="container my-5">
+  <h3>Your Cart 🛒</h3>
+
+  <div class="cart-card p-4">
+    @if(cartService.getCartitem().length == 0){
+    <div class="col-12 text-center">
+      <h4>Your cart is empty</h4>
+      <a routerLink="/" class="btn btn-primary">Continue Shopping</a>
+    </div>
+    }
+
+    <!-- cart item -->
+    @for (item of cartService.getCartitem(); track item.id){
+    <div class="cart-item row align-items-center">
+      <div class="col-md-1 text-center">
+        <input
+          type="checkbox"
+          [checked]="item.is_select"
+          (change)="cartService.selectCartItem(item)"
+          class="form-control btn btn-outline-primary form-check-input"
+        />
+      </div>
+
+      <div class="col-md-2 text-center">
+        <img [src]="item.image" [alt]="item.title" />
+      </div>
+      <div class="col-md-2">
+        <strong>{{item.title}}</strong>
+        <p class="mb-0 text-muted">{{item.category}}</p>
+      </div>
+      <div class="col-md-2 cart-price">{{item.price | currency}}</div>
+
+      <div class="col-md-2 quantity-controls">
+        <input
+          type="button"
+          class="btn btn-outline-danger btn-sm"
+          value="➖"
+          (click)="cartService.decrementQty(item)"
+        />
+
+        <input
+          type="button"
+          class="form-control form-control-sm"
+          [value]="item.qty"
+        />
+
+        <input
+          type="button"
+          class="btn btn-outline-success btn-sm"
+          value="➕"
+          (click)="cartService.incrementQty(item)"
+        />
+      </div>
+      <div class="col-md-1">
+        <strong> {{ item.price * item.qty |currency}}</strong>
+      </div>
+
+      <div class="col-md-2">
+        <button
+          class="btn btn-outline-danger btn-sm"
+          (click)="cartService.removeCartItem(item)"
+        >
+          Remove 🗑️
+        </button>
+      </div>
+    </div>
+    }
+
+    <div class="cart-summary mt-3">
+      Total:{{cartService.getCartTotal() |currency}}
+    </div>
+
+    <button
+      class="btn btn-checkout mt-3"
+      routerLink="/check-out"
+      routerLinkActive="active-link"
+    >
+      Checkout
+    </button>
+  </div>
+</div>
