@@ -1,28 +1,92 @@
+/* Title */
 .product-title {
-  font-size: 1.8rem;
-  font-weight: 600;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
 }
-.price {
-  font-size: 1.5rem;
-  color: #28a745;
-  font-weight: bold;
-}
+
+/* Category badge */
 .category {
-  font-size: 1.6rem;
-  color: #888;
-  margin-left: 10px;
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #555;
+  background: #f1f1f1;
+  padding: 5px 12px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
 }
+
+.category:hover {
+  background: #007bff;
+  color: #fff;
+}
+
+/* Price */
+.price {
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #28a745, #00c853);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+/* Product image */
 .product-image {
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 10px;
+  border: none;
+  border-radius: 16px;
+  padding: 15px;
   background: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
+
+.product-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Add to Cart Button */
 .btn-add-cart {
   font-size: 1.1rem;
-  padding: 10px 20px;
+  font-weight: 600;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
 }
+
+.btn-add-cart:hover {
+  background: linear-gradient(135deg, #0056b3, #0095ff);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(0, 123, 255, 0.4);
+}
+
+/* Stock status */
 .Instock {
-  font-weight: bold;
+  font-weight: 700;
   color: #28a745;
+  margin-top: 12px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .product-title {
+    font-size: 1.6rem;
+  }
+  .price {
+    font-size: 1.5rem;
+  }
+  .product-image {
+    height: auto;
+    max-height: 300px;
+  }
 }

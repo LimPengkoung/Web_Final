@@ -1,105 +1,111 @@
-body {
-  background-color: #f8f9fa;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+.cart-item img {
+  max-width: 80px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-h3 {
-  font-weight: 700;
-  margin-bottom: 20px;
+.cart-item img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Cart container */
 .cart-card {
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  background: white;
-  transition: transform 0.2s ease;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cart-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.12);
 }
 
-/* Cart items */
 .cart-item {
-  border-bottom: 1px solid #eee;
-  padding: 15px 0;
-  transition: background-color 0.2s;
+  border-bottom: 1px solid #f1f1f1;
+  padding: 14px 0;
+  transition: background 0.25s ease;
 }
+
 .cart-item:hover {
-  background-color: #fafafa;
-}
-.cart-item img {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: #f8faff;
+  border-radius: 12px;
 }
 
-/* Price text */
-.cart-price {
-  font-weight: bold;
-  color: #28a745;
-  font-size: 1rem;
-}
-
-/* Remove link */
-.cart-remove a {
-  color: #dc3545;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-.cart-remove a:hover {
-  color: #a71d2a;
-  text-decoration: underline;
-}
-
-/* Summary */
-.cart-summary {
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-align: right;
-  padding-top: 10px;
-}
-
-/* Checkout button */
-.btn-checkout {
-  background: linear-gradient(90deg, #9ba3a4, #9ba3a4);
-  display: block;
-  margin-left: auto; /* pushes it to the right */
-  margin-right: 0;
-  color: white;
-  font-size: 1.1rem;
-  width: 20%;
-  padding: 12px;
-  border-radius: 10px;
-  border: none;
-  transition: all 0.3s ease;
-}
-.btn-checkout:hover {
-  background: linear-gradient(90deg, #1e75e0, #1e75e0);
-  transform: scale(1.03);
-}
-
-/* Added CSS for the quantity buttons */
 .quantity-controls {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  gap: 10px;
 }
+
 .quantity-controls .form-control {
-  width: 50px; /* Adjust the width as needed */
+  max-width: 55px;
   text-align: center;
-  margin: 0 5px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  transition: all 0.2s ease;
 }
-/* Bigger checkbox */
-.cart-item input[type="checkbox"] {
-  width: 25px;
-  height: 25px;
-  transform: scale(1.3); /* makes it larger */
-  cursor: pointer;
+
+.quantity-controls .form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+.cart-price {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #007bff;
+}
+
+.cart-summary {
+  text-align: right;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 14px;
+  margin-top: 16px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f8f9fa, #eef3ff);
+  box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.btn-checkout {
+  width: 100%;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  font-weight: 700;
+  border-radius: 14px;
+  padding: 14px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(37, 117, 252, 0.35);
+}
+
+.btn-checkout:hover {
+  background: linear-gradient(135deg, #4a00e0, #007bff);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(37, 117, 252, 0.45);
+}
+
+.btn-outline-danger {
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.btn-outline-danger:hover {
+  background: #ff3b3b;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+h3 {
+  font-weight: 800;
+  margin-bottom: 24px;
+  color: #222;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
 }

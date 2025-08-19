@@ -1,4 +1,3 @@
-/* Reset & Base */
 * {
   margin: 0;
   padding: 0;
@@ -7,123 +6,141 @@
 }
 
 body {
-  background-color: #f8f9fa;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
   min-height: 100vh;
+  padding: 20px;
 }
 
-/* Card Container */
 .card {
   position: relative;
   width: 100%;
   max-width: 340px;
   margin: auto;
-  background: #fff;
-  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  backdrop-filter: blur(10px);
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
 }
 
-/* Badge */
 .Category-badge {
   position: absolute;
-  top: 12px;
-  left: 12px;
-  background-color: #b40505;
+  top: 14px;
+  left: 14px;
+  background: linear-gradient(135deg, #ff4b2b, #ff416c);
   color: white;
-  padding: 4px 12px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 50px;
   z-index: 10;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(255, 65, 108, 0.4);
 }
 
-/* Image */
 .card-image,
 .pro-img {
   width: 100%;
-  height: 250px;
+  height: 240px;
   object-fit: contain;
-  background-color: #fff;
+  background: #fff;
+  transition: transform 0.4s ease;
 }
 
-/* Card Content */
-.card-content,
-.card-body {
-  padding: 20px;
+.card:hover .card-image {
+  transform: scale(1.05);
 }
 
-/* Title */
+.card-content {
+  padding: 18px;
+  text-align: center;
+}
+
 .card-title,
 .product-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 8px;
+  height: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
-/* Price */
-.card-price,
+.card-price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #007bff;
+  margin-bottom: 2px;
+}
+
 .card-price-KHR {
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #ff0000b4;
-  margin-bottom: 0.3rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #28a745;
+  margin-bottom: 12px;
 }
 
-/* Description */
 .card-description,
 .product-description {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #555;
-  margin-bottom: 12px;
+  line-height: 1.4;
+  margin-bottom: 14px;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
+  transition: color 0.3s ease;
   text-decoration: none;
-  &:hover {
-    color: #0da9fd;
-  }
 }
 
-/* Rating */
+.card-description:hover {
+  color: #007bff;
+}
+
 .card-rating {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #f39c12;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
-/* Button */
-.card-button,
-.btn-buy {
+.card-rating i {
+  color: gold;
+  margin-right: 2px;
+  font-size: 1rem;
+}
+
+.card-button {
   display: inline-block;
-  text-decoration: none;
-  background-color: #007bff;
+  background: linear-gradient(135deg, #007bff, #00c6ff);
   color: white;
-  padding: 10px 18px;
-  border-radius: 8px;
-  font-weight: 500;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
   text-align: center;
-  transition: background-color 0.3s ease;
+  transition: all 0.35s ease;
   width: 100%;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
 }
 
 .card-button:hover {
-  background-color: #0056b3;
+  background: linear-gradient(135deg, #0056b3, #0095ff);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 123, 255, 0.5);
 }
+
+/* Responsive */
 @media (max-width: 576px) {
   .card {
     max-width: 100%;
@@ -135,24 +152,10 @@ body {
   }
 
   .card-description {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 
   .pro-img {
     height: 200px;
   }
-}
-.card-rating i {
-  color: gold;
-  margin-right: 2px;
-  font-size: 1.1rem;
-}
-
-.card-img-top {
-  height: 200px;
-  object-fit: contain;
-}
-
-.card-content {
-  padding: 10px;
 }
