@@ -2,6 +2,7 @@ import { CurrencyPipe, NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CartService } from '../service/cart-service';
+import { ToKHRPipe } from '../custom-pipes/to-khr-pipe';
 
 
 declare const axios: any
@@ -9,7 +10,7 @@ declare const $: any
 
 @Component({
   selector: 'app-product-detail',
-  imports: [CurrencyPipe],
+  imports: [CurrencyPipe, ToKHRPipe],
   templateUrl: './product-detail.html',
   styleUrl: './product-detail.css'
 })

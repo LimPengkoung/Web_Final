@@ -19,6 +19,9 @@
       <div class="mb-3">
         <span class="price">{{product.price | currency}}</span>
       </div>
+      <div class="mb-3">
+        <span class="price-kh">{{product.price | toKHR:4100}}</span>
+      </div>
       <p>{{product.description}}</p>
 
       <!-- Add to Cart Button -->

@@ -103,6 +103,10 @@ body {
   text-decoration: none;
 }
 
+.product-description:hover {
+  color: red;
+}
+
 .card-description:hover {
   color: #007bff;
 }
