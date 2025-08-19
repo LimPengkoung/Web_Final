@@ -82,6 +82,10 @@
           <span><strong>Total</strong></span>
           <strong>{{ total | currency }}</strong>
         </li>
+        <li class="list-group-item d-flex justify-content-between">
+          <span><strong></strong></span>
+          <strong>{{ total | toKHR:4100 }}</strong>
+        </li>
       </ul>
 
       <button class="btn btn-primary btn-block btn-lg" (click)="placeOrder()">

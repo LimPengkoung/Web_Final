@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CartService } from '../service/cart-service';
 import { CurrencyPipe, NgFor } from '@angular/common';
+import { ToKHRPipe } from '../custom-pipes/to-khr-pipe';
 declare const Swal: any
 
 @Component({
   selector: 'app-check-out',
-  imports: [CurrencyPipe, NgFor],
+  imports: [CurrencyPipe, NgFor, ToKHRPipe],
   templateUrl: './check-out.html',
   styleUrl: './check-out.css'
 })
