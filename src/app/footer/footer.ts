@@ -1,15 +1,17 @@
 import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
+import { Home } from '../home/home';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
-  imports: [NgIf],
+  imports: [NgIf, RouterLink],
   templateUrl: './footer.html',
   styleUrl: './footer.css'
 })
 export class Footer {
-    currentYear = new Date().getFullYear();
-    email: string = '';
+  currentYear = new Date().getFullYear();
+  email: string = '';
   subscribed = false;
 
   subscribeEmail() {
